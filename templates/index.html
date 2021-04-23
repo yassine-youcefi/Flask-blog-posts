@@ -1,10 +1,11 @@
 {% extends "layout/layout.html" %}
 
+
 {% block content%}
 
 {%for post in posts%}
-<h1>{{post.author}}</h1> on <p>{{post.date_posted}}</p>
-<p>{{post.title}}</p>
+<h1>{{post.title}}</h1>
+<p>{{post.author}} on : {{post.date_posted}}</p>
 <p>{{post.content}}</p>
 
 {%endfor%}

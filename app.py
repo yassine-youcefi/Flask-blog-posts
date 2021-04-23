@@ -4,6 +4,7 @@ from flask import Flask, render_template
 application = Flask(__name__)
 
 posts = [
+
     {
         'author': 'yassine youcefi',
         'title': 'Blog jdid hada 1',
