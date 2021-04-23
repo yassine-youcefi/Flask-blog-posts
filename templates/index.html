@@ -4,9 +4,14 @@
 {% block content%}
 
 {%for post in posts%}
-<h1>{{post.title}}</h1>
-<p>{{post.author}} on : {{post.date_posted}}</p>
-<p>{{post.content}}</p>
+
+<div class="card text-white bg-dark mb-3">
+    <div class="card-header">{{post.author}} on : {{post.date_posted}}</div>
+    <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.content}}</p>
+    </div>
+</div>
 
 {%endfor%}
 
