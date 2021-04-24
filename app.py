@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for
+from flask import flash
 from forms import Sign_up, Login
 
 application = Flask(__name__)
@@ -57,13 +58,16 @@ def about():
     return render_template('about.html', title='About')
 
 
-@application.route('/sign_up')
+@application.route('/sign_up', methods=["GET", "POST"])
 def sign_up():
     form = Sign_up()
+    if form.validate_on_submit():
+        flash('Mr : {} Your Account was created successfully'.format(
+            form.username.data), 'success')
     return render_template('sign_up.html', title='Sign_up', form=form)
 
 
-@application.route('/login')
+@application.route('/login', methods=["GET", "POST"])
 def login():
     form = Login()
     return render_template('login.html', title='Login', form=form)
