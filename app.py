@@ -1,12 +1,20 @@
 from flask import Flask, render_template, url_for
 from flask import flash, redirect
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from forms import Sign_up, Login
+from config import Config
+from models import User, Post
 
 application = Flask(__name__)
 
 
-# application config "pyfile"
-application.config.from_pyfile('config.py')
+# application config "object"
+application.config.from_object(Config)
+
+# init database instance
+db = SQLAlchemy(application)
+migrate = Migrate(application, db)
 
 posts = [
 
