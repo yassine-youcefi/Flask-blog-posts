@@ -1,7 +1,12 @@
 from flask import Flask, render_template, url_for
-
+from forms import Sign_up, Login
 
 application = Flask(__name__)
+
+
+# application config "pyfile"
+application.config.from_pyfile('config.py')
+
 posts = [
 
     {
@@ -50,6 +55,19 @@ def home():
 @application.route('/about')
 def about():
     return render_template('about.html', title='About')
+
+
+@application.route('/sign_up')
+def sign_up():
+    form = Sign_up()
+    return render_template('sign_up.html', title='Sign_up', form=form)
+
+
+@application.route('/login')
+def login():
+    form = Login()
+    return render_template('login.html', title='Login', form=form)
+
 
 # if __name__ == "__main__":
 #     application.run(debug=True, port=5050)
