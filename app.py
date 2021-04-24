@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-from flask import flash
+from flask import flash, redirect
 from forms import Sign_up, Login
 
 application = Flask(__name__)
@@ -64,6 +64,7 @@ def sign_up():
     if form.validate_on_submit():
         flash('Mr : {} Your Account was created successfully'.format(
             form.username.data), 'success')
+        return redirect(url_for('login'))
     return render_template('sign_up.html', title='Sign_up', form=form)
 
 
