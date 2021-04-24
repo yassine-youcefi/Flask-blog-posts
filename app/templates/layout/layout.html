@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon  -->
+    <link rel="icon" href="static/images/favicon.ico">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -30,18 +33,24 @@
                 {% with messages = get_flashed_messages(with_categories = true) %}
                 {% if messages %}
                 {% for category, message in messages %}
+                {%if category == 'success'%}
                 <div class="alert alert-{{category}}">
                     {{ message }}
                 </div>
+                {%else%}
+                <div class="alert alert-danger">
+                    {{message}}
+                </div>
+                {%endif%}
                 {%endfor%}
                 {%endif%}
                 {%endwith%}
-                {% block content %}{% endblock %}
+                {% block content %}{% endblock content %}
             </div>
             <div class="col-md-4">
                 <div class="content-section text-white bg-dark " style="padding: 12px;">
                     <h3> Sidebar</h3>
-                    <p class='text-muted'>You can put any information here you'd like.
+                    <p class='text-muted'>You can put any information here you'd like.</p>
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-light">Latest Posts</li>
                         <li class="list-group-item list-group-item-light">Announcements</li>

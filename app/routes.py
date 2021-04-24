@@ -1,20 +1,8 @@
-from flask import Flask, render_template, url_for
-from flask import flash, redirect
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from forms import Sign_up, Login
-from config import Config
-from models import User, Post
+from flask import render_template, url_for, flash, redirect
+from app.forms import Sign_up, Login
+from app.models import User, Post
+from app import application
 
-application = Flask(__name__)
-
-
-# application config "object"
-application.config.from_object(Config)
-
-# init database instance
-db = SQLAlchemy(application)
-migrate = Migrate(application, db)
 
 posts = [
 
@@ -87,7 +75,3 @@ def login():
         else:
             flash('logged in unsuccessfull, You must check your username or password')
     return render_template('login.html', title='Login', form=form)
-
-
-# if __name__ == "__main__":
-#     application.run(debug=True, port=5050)
