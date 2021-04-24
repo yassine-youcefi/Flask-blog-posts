@@ -1,0 +1,13 @@
+version: "3"
+services:
+  web:
+    container_name: blog
+    build: .
+    ports:
+      - "0.0.0.0:5000:5000"
+    command: bash -c  "python run.py"
+
+    volumes:
+      - .:/code
+    stdin_open: true
+    tty: true
