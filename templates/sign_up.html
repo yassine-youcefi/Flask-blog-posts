@@ -5,7 +5,7 @@
     <form action="" method="POST">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
-            <legend> Sign_up Now ! </legend>
+            <legend> Sign up Now ! </legend>
             <div class="form-group">
 
                 {{form.username.label(class="form-control-label")}}
@@ -76,7 +76,8 @@
 </div>
 <div class="border-top pt-3 ">
     <small class="text-muted" style="padding-bottom: 20px;">
-        Already have ab account ! <a class="ml-2" href="{{url_for('login')}}">Sign in</a>
+        Already have ab account ! <a class="ml-2" style="color:#e32422 !important;" href="{{url_for('login')}}">Sign
+            in</a>
     </small>
 
 </div>

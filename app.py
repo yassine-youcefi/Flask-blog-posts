@@ -71,6 +71,13 @@ def sign_up():
 @application.route('/login', methods=["GET", "POST"])
 def login():
     form = Login()
+    if form.validate_on_submit():
+        if form.username.data == "yani" and form.password.data == "password":
+            flash('Mr : {} You are logged in '.format(
+                form.username.data), 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('logged in unsuccessfull, You must check your username or password')
     return render_template('login.html', title='Login', form=form)
 
 
