@@ -4,6 +4,8 @@
 
     - clone the repository.
 
+    ### for venv:
+
     - install the requirements
 
     -then init the env variables :
@@ -12,3 +14,7 @@
         2- export FLASK_ENV=development
 
         3- flask run
+
+    ### for docker-compose :
+
+    - docker-compose up --build
