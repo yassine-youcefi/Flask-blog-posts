@@ -9,7 +9,7 @@
     - install the requirements
 
     -then init the env variables :
-        1- export FLASK_APP=app.py (the       application will take post:5000 )
+        1- export FLASK_APP=app.py (the application will take post:5000 )
 
         2- export FLASK_ENV=development
 

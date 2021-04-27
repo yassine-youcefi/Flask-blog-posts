@@ -1,8 +1,9 @@
 # syntax = docker/dockerfile:1.2.1
-FROM python:3.8 
-RUN mkdir /code
+FROM python:3.8
 WORKDIR /code 
-COPY requirements.txt /code/ 
-RUN --mount=type=cache,target=/root/.cache \
-    pip3 install -r requirements.txt 
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt 
+EXPOSE 5000
 COPY . /code/
