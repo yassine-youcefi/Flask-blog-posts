@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect
 from app.forms import Sign_up, Login
 from app.models import User, Post
 from app import application, db, bcrypt
-from flask_login import login_user
+from flask_login import login_user, current_user
 
 posts = [
 
@@ -56,6 +56,8 @@ def about():
 
 @application.route('/sign_up', methods=["GET", "POST"])
 def sign_up():
+    if current_user.is_authenticated:
+        redirect(url_for('home'))
     form = Sign_up()
     if form.validate_on_submit():
         password_hashed = bcrypt.generate_password_hash(
@@ -72,6 +74,8 @@ def sign_up():
 
 @application.route('/login', methods=["GET", "POST"])
 def login():
+    if current_user.is_authenticated:
+        redirect(url_for('home'))
     form = Login()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
