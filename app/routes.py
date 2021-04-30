@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect
 from app.forms import Sign_up, Login
 from app.models import User, Post
 from app import application, db, bcrypt
-
+from flask_login import login_user
 
 posts = [
 
@@ -74,9 +74,9 @@ def sign_up():
 def login():
     form = Login()
     if form.validate_on_submit():
-        if form.username.data == "yani" and form.password.data == "password":
-            flash('Mr : {} You are logged in '.format(
-                form.username.data), 'success')
+        user = User.query.filter_by(username=form.username.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember=form.rememberMe.data)
             return redirect(url_for('home'))
         else:
             flash('logged in unsuccessfull, You must check your username or password')

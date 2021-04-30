@@ -18,11 +18,17 @@ class Sign_up(FlaskForm):
                                                  EqualTo('password')])
     submit = SubmitField('Sign_up')
 
-    def validatetion_field(self, username):
+    def validation_username(self, username):
         # try to get user instance filter by user name
         user = User.query.filter_by(username=username.data).first()
         if user:
-            raise ValidationError('User already exist')
+            raise ValidationError('Userneme already exist')
+
+    def validation_email(self, email):
+        # try to get user instance filter by user name
+        user = User.query.filter_by(email=email.data).first()
+        if user:
+            raise ValidationError('Email already exist')
 
 
 class Login(FlaskForm):
