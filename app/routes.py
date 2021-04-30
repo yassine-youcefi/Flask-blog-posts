@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect
 from app.forms import Sign_up, Login
 from app.models import User, Post
 from app import application, db, bcrypt
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 
 posts = [
 
@@ -85,3 +85,9 @@ def login():
         else:
             flash('logged in unsuccessfull, You must check your username or password')
     return render_template('login.html', title='Login', form=form)
+
+
+@application.route('/logout')
+def logout():
+    logout_user()
+    redirect(url_for('home'))
