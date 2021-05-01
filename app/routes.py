@@ -1,8 +1,8 @@
-from flask import render_template, url_for, flash, redirect
+from flask import render_template, url_for, flash, redirect, request
 from app.forms import Sign_up, Login
 from app.models import User, Post
 from app import application, db, bcrypt
-from flask_login import login_user, current_user, logout_user
+from flask_login import login_user, current_user, logout_user, login_required
 
 posts = [
 
@@ -93,9 +93,11 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             # log in user
             login_user(user, remember=form.rememberMe.data)
-            return redirect(url_for('home'))
+            next_route = request.args.get('next')
+            return redirect(next_route) if next_route else redirect(url_for('home'))
         else:
-            flash('logged in unsuccessfull, You must check your username or password')
+            flash(
+                'logged in unsuccessfull, You must check your username or password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
 
@@ -105,10 +107,10 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+# user must be logged in
+
 
 @application.route('/profile')
+@login_required
 def profile():
-    if current_user.is_authenticated:
-        return render_template('profile.html', title='profile')
-    else:
-        return redirect(url_for('home'))
+    return render_template('profile.html', title='profile')

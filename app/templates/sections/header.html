@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#32383e !important;">
+<nav class="navbar navbar-expand-lg navbar-dark " {% if color not null %} style="background-color :{{color}}" {%else%}
+    style="background-color:#32383e !important;" {%endif%}>
     <a class="navbar-brand" href="">
         Yani
         <!-- <img src="/static/images/logo.jpeg" height="35"> -->

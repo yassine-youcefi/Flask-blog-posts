@@ -1,4 +1,3 @@
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -14,5 +13,8 @@ application.config.from_object(Config)
 db = SQLAlchemy(application)
 migrate = Migrate(application, db)
 bcrypt = Bcrypt(application)
+# login manager init
 login_manager = LoginManager(application)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 from app import routes
