@@ -2,19 +2,34 @@
 
 ## run :
 
-    - clone the repository.
+- clone the repository.
 
-    ### for venv:
+### 1. Vertualenv :
 
-    - install the requirements
+1. install the requirements ```pip3 install -r requirements.txt
 
-    -then init the env variables :
-        1- export FLASK_APP=app.py (the application will take post:5000 )
+2. then init the env variables :
 
-        2- export FLASK_ENV=development
+- export `FLASK_APP=app.py` (the application will take post:5000 )
 
-        3- flask run
+- export FLASK_ENV=development
 
-    ### for docker-compose :
+- flask run
 
-    - docker-compose up --build
+### 2. docker-compose :
+
+- `docker-compose up --build`
+
+### _Screen shots:_
+
+1. _Home_ :
+
+![](app/static/images/home.png)
+
+2. _Login_ :
+
+![](app/static/images/login.png)
+
+3. _Sign in_ :
+
+![](app/static/images/signup.png)
