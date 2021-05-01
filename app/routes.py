@@ -103,4 +103,10 @@ def login():
 def logout():
     # logout user
     logout_user()
-    redirect(url_for('home'))
+    return redirect(url_for('home'))
+
+
+@application.route('/profile')
+def profile():
+
+    return render_template('profile.html', title='profile')
