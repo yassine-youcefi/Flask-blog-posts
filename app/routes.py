@@ -108,5 +108,7 @@ def logout():
 
 @application.route('/profile')
 def profile():
-
-    return render_template('profile.html', title='profile')
+    if current_user.is_authenticated:
+        return render_template('profile.html', title='profile')
+    else:
+        return redirect(url_for('home'))
