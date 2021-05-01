@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from app.models import User
 
-
+# class validator for signup route 
 class Sign_up(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(),
@@ -18,19 +18,21 @@ class Sign_up(FlaskForm):
                                                  EqualTo('password')])
     submit = SubmitField('Sign_up')
 
+    # methode to check if username exist or not
     def validation_username(self, username):
         # try to get user instance filter by user name
         user = User.query.filter_by(username=username.data).first()
         if user:
             raise ValidationError('Userneme already exist')
-
+            
+    # methode to check if username exist or not
     def validation_email(self, email):
         # try to get user instance filter by user name
         user = User.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('Email already exist')
 
-
+# class validator for login route
 class Login(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(),
