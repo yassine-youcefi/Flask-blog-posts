@@ -32,7 +32,14 @@
     "minimap.background": "#161b22",
     "sideBarTitle.foreground": "#2ea043",
     "symbolIcon.functionForeground": "#2ea043",
-"input.background": "#161b22"
+"input.background": "#161b22",
+"breadcrumb.background": "#2ea043",
+"breadcrumb.foreground": "#fff",
+"breadcrumb.focusForeground": "#161b22",
+"sideBar.foreground": "#fff",
+"terminal.foreground": "#fff",
+"textLink.foreground": "#ff0000"
+
 },
  
 }
