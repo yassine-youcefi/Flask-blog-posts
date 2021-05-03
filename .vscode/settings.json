@@ -24,20 +24,37 @@
     "list.hoverBackground": "#2ea043",
     "list.hoverForeground": "#fff",
     "editorHoverWidget.border": "#2ea043",
-    "button.hoverBackground": "#65856b",
+    "button.hoverBackground": "#2ea043",
     "activityBar.border": "#2ea043",
-    "sideBarSectionHeader.background": "#2ea043",
+    "sideBarSectionHeader.background": "#161b22",
     "statusBar.background": "#161b22",
 	"statusBarItem.hoverBackground": "#2ea043",
     "minimap.background": "#161b22",
     "sideBarTitle.foreground": "#fff",
     "symbolIcon.functionForeground": "#2ea043",
 "input.background": "#161b22",
-"breadcrumb.background": "#2ea043",
+"breadcrumb.background": "#161b22",
 "breadcrumb.foreground": "#fff",
 "breadcrumb.focusForeground": "#161b22",
 "sideBar.foreground": "#fff",
 "terminal.foreground": "#fff",
+"editor.findMatchBackground": "#2ea043",
+"editorHoverWidget.background": "#161b22",
+
 },
- 
+
+"editor.tokenColorCustomizations": {
+    "comments": "#7ef188",
+    "functions": "#23aaf2",
+    "numbers": "#6ee478",
+    "strings": "#ef4f4f",
+    "textMateRules": [
+        {
+            "scope": "keyword.operator",
+            "settings": {
+                "foreground": "#fff"
+            }
+        }
+    ]
+}
 }
