@@ -47,7 +47,7 @@
     "comments": "#7ef188",
     "functions": "#23aaf2",
     "numbers": "#6ee478",
-    "strings": "#b7f87b",
+    "strings": "#f87f7b",
     "textMateRules": [
         {
             "scope": "keyword.operator",
