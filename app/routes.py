@@ -107,10 +107,11 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+
 # user must be logged in
-
-
 @application.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', title='profile')
+    user_profile = url_for(
+        'static', filename='images/' + current_user.image_file)
+    return render_template('profile.html', title='profile', image_file=user_profile)
