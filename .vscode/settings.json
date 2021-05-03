@@ -1,7 +1,7 @@
 {
     "workbench.colorCustomizations": {
     "activityBar.background": "#161b22",
-    "sideBar.background": "#161B22",
+    "sideBar.background": "#0d1117",
     "activityBar.activeBackground": "#2ea043",
     "activityBarBadge.foreground": "#fff",
     "activityBar.foreground": "#fff",
@@ -15,22 +15,22 @@
     "tab.border": "#fff",
     "tab.activeBorder": "#fff",
     "tab.activeForeground": "#fff",
-    "panel.background": "#161b22",
+    "panel.background": "#0d1117",
     "badge.background": "#2ea043",
     "menu.background": "#161b22",
     "editor.background": "#161b22",
     "button.background": "#161b22",
-    "terminal.background": "#161b22",
+    "terminal.background": "#0d1117",
     "list.hoverBackground": "#2ea043",
     "list.hoverForeground": "#fff",
     "editorHoverWidget.border": "#2ea043",
-    "button.hoverBackground": "#2ea043",
+    "button.hoverBackground": "#65856b",
     "activityBar.border": "#2ea043",
     "sideBarSectionHeader.background": "#2ea043",
     "statusBar.background": "#161b22",
 	"statusBarItem.hoverBackground": "#2ea043",
     "minimap.background": "#161b22",
-    "sideBarTitle.foreground": "#2ea043",
+    "sideBarTitle.foreground": "#fff",
     "symbolIcon.functionForeground": "#2ea043",
 "input.background": "#161b22",
 "breadcrumb.background": "#2ea043",
@@ -38,8 +38,6 @@
 "breadcrumb.focusForeground": "#161b22",
 "sideBar.foreground": "#fff",
 "terminal.foreground": "#fff",
-"textLink.foreground": "#ff0000"
-
 },
  
 }
