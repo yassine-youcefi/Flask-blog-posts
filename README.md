@@ -20,16 +20,3 @@
 
 - `docker-compose up --build`
 
-### _Screen shots:_
-
-1. _Home_ :
-
-![](app/static/images/home.png)
-
-2. _Login_ :
-
-![](app/static/images/login.png)
-
-3. _Sign in_ :
-
-![](app/static/images/signup.png)
