@@ -1,5 +1,14 @@
-[tool]
-[tool.commitizen]
-name = "cz_conventional_commits"
+[tool.poetry]
+name = "Flask-blog-post"
 version = "0.0.1"
 tag_format = "0.1.1"
+
+[tool.semantic_release]
+version_variable = [
+    "app/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+branch = "main"
+upload_to_pypi = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
