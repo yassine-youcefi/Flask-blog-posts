@@ -23,7 +23,6 @@ Jinja2==2.11.3
 Mako==1.1.4
 MarkupSafe==1.1.1
 packaging==20.9
-pkg-resources==0.0.0
 pluggy==0.13.1
 py==1.10.0
 pycodestyle==2.7.0
@@ -39,3 +38,5 @@ typing-extensions==3.7.4.3
 Werkzeug==1.0.1
 WTForms==2.3.3
 zipp==3.4.1
+semantic-version==2.8.5
+commitizen==2.17.11

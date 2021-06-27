@@ -18,3 +18,4 @@ login_manager = LoginManager(application)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 from app import routes
+__version__ = '0.0.1'
