@@ -5,14 +5,11 @@ from flask_bcrypt import Bcrypt
 from app.config import Config
 from flask_login import LoginManager
 
-
-
 __version__ = '0.0.1'
 
 application = Flask(__name__)
 # application config "object"
 application.config.from_object(Config)
-
 
 # init database instance
 db = SQLAlchemy(application)

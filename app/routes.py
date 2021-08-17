@@ -3,8 +3,6 @@ from app.forms import Sign_up, Login, Update_profile
 from app.models import User, Post
 from app import application, db, bcrypt
 from flask_login import login_user, current_user, logout_user, login_required
-from flask_liquid import Liquid
-from flask_liquid import render_template as render_liquid_template
 
 posts = [
 
@@ -44,16 +42,11 @@ posts = [
     }
 ]
 
-liquid = Liquid(application)
 
 @application.route('/')
 @application.route('/home')
 def home():
     return render_template('index.html')
-
-@application.route('/liquid')
-def liquid():
-    return render_liquid_template('index.liquid ')
 
 
 @application.route('/about')
