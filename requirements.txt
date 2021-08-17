@@ -40,3 +40,4 @@ WTForms==2.3.3
 zipp==3.4.1
 semantic-version==2.8.5
 commitizen==2.17.11
+Flask-Liquid
